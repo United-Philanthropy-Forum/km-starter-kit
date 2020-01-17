@@ -1,12 +1,11 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal 8 projects with a relocated document root",
+    "name": "thinkshout/km-starter-kit",
+    "description": "Knowledge Management Collaborative template for Drupal 8",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
+    "homepage": "https://github.com/thinkshout/km-starter-kit",
     "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html"
     },
     "repositories": [
         {
