@@ -37,7 +37,11 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            }
+            },
+            "allowed-packages": [
+                "thinkshout/km_collaborative"
+            ],
+            "gitignore": false
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
