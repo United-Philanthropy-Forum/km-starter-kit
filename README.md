@@ -21,7 +21,7 @@ Enter the new site folder:
 cd new-project-name
 ```
 
-Comment out the part of your `.gitignore` file that ignores your lock file by deleting this line:
+Remove the part of your `.gitignore` file that ignores your lock file by deleting this line:
 
 ```
 composer.lock
