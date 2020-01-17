@@ -12,12 +12,17 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/thinkshout/km-collaborative"
         }
     ],
     "require": {
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8"
+        "drupal/core-recommended": "^8.8",
+        "thinkshout/km_collaborative": "dev-master"
     },
     "require-dev": {
     },
@@ -31,6 +36,9 @@
     },
     "extra": {
         "drupal-scaffold": {
+            "excludes": [
+                "sites/default/default.services.yml"
+            ],
             "locations": {
                 "web-root": "web/"
             }
