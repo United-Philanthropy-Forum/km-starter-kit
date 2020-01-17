@@ -11,7 +11,7 @@ Choose a new project name
 To start a new repository, run:
 
 ```
-composer create-project thinkshout/km-starter-kit new-project-name --repository-url=https://github.com/thinkshout/km-starter-kit
+composer create-project thinkshout/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/thinkshout/km-starter-kit\", \"type\": \"git\"}"
 
 ```
 
