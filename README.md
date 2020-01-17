@@ -12,7 +12,6 @@ To start a new repository, run:
 
 ```
 composer create-project thinkshout/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/thinkshout/km-starter-kit\", \"type\": \"git\"}" --remove-vcs
-
 ```
 
 Enter the new site folder:
@@ -24,7 +23,11 @@ cd new-project-name
 Remove the part of your `.gitignore` file that ignores your lock file by deleting this line:
 
 ```
-composer.lock
+# Gitignore for the starter kit.
+*
+!.gitignore
+!README.md
+!composer.json
 ```
 
 Initialize a repository on github https://github.com/new that matches your project name and connect your local directory to it:
