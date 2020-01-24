@@ -36,7 +36,7 @@ Initialize a repository on github https://github.com/new that matches your proje
 git init
 git add .
 git commit -m "Initial commit."
-git remote add origin git@github.com:thinkshout/new-project-name.git
+git remote add origin git@github.com:United-Philanthropy-Forum/new-project-name.git
 git push -u origin master
 ```
 
