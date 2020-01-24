@@ -11,7 +11,7 @@ Choose a new project name
 To start a new repository, run:
 
 ```
-composer create-project thinkshout/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/thinkshout/km-starter-kit\", \"type\": \"git\"}" --remove-vcs --stability=dev
+composer create-project United-Philanthropy-Forum/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/thinkshout/km-starter-kit\", \"type\": \"git\"}" --remove-vcs --stability=dev
 ```
 
 Enter the new site folder:
@@ -51,7 +51,7 @@ Delete the contents of this README.md above this line.
 From within your `~/Sites` directory run:
 
 ```
-git clone git@github.com:thinkshout/new-project-name.git
+git clone git@github.com:United-Philanthropy-Forum/new-project-name.git
 cd new-project-name
 composer install
 ```
