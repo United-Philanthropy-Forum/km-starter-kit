@@ -1,5 +1,5 @@
 {
-    "name": "thinkshout/km-starter-kit",
+    "name": "United-Philanthropy-Forum/km-starter-kit",
     "description": "Knowledge Management Collaborative template for Drupal 8",
     "type": "project",
     "license": "GPL-2.0-or-later",
@@ -14,14 +14,14 @@
         },
         {
             "type": "git",
-            "url": "https://github.com/thinkshout/km-collaborative"
+            "url": "https://github.com/United-Philanthropy-Forum/km-collaborative"
         }
     ],
     "require": {
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
-        "thinkshout/km_collaborative": "dev-master"
+        "United-Philanthropy-Forum/km_collaborative": "dev-master"
     },
     "require-dev": {
     },
@@ -39,7 +39,7 @@
                 "web-root": "web/"
             },
             "allowed-packages": [
-                "thinkshout/km_collaborative"
+                "United-Philanthropy-Forum/km_collaborative"
             ],
             "gitignore": false
         },
