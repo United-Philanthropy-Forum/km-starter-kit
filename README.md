@@ -11,7 +11,7 @@ Choose a new project name
 To start a new repository, run:
 
 ```
-composer create-project United-Philanthropy-Forum/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/United-Philanthropy-Forum/km-starter-kit\", \"type\": \"git\"}" --remove-vcs --stability=dev
+composer create-project united-philanthropy-forum/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/United-Philanthropy-Forum/km-starter-kit\", \"type\": \"git\"}" --remove-vcs --stability=dev
 ```
 
 Enter the new site folder:
