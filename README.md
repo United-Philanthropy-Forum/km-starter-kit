@@ -20,14 +20,11 @@ Enter the new site folder:
 cd new-project-name
 ```
 
-Remove the part of your `.gitignore` file that ignores your lock file by deleting this line:
+Replace the starterkit's `.gitignore` with the "build.gitignore":
 
 ```
-# Gitignore for the starter kit.
-*
-!.gitignore
-!README.md
-!composer.json
+rm .gitignore
+mv build.gitignore .gitignore
 ```
 
 Initialize a repository on github https://github.com/new that matches your project name and connect your local directory to it:
