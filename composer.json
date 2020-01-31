@@ -21,7 +21,7 @@
         "composer/installers": "^1.2",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
-        "United-Philanthropy-Forum/km_collaborative": "dev-master"
+        "united-philanthropy-forum/km_collaborative": "dev-master"
     },
     "require-dev": {
     },
@@ -39,7 +39,7 @@
                 "web-root": "web/"
             },
             "allowed-packages": [
-                "United-Philanthropy-Forum/km_collaborative"
+                "united-uhilanthropy-forum/km_collaborative"
             ],
             "gitignore": false
         },
