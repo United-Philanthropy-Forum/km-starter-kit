@@ -84,6 +84,11 @@ command was added post install, update, and build.
 
 * The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
 
+* The option to allow upstream modules to apply patches was enabled via the "enable-patching" section. This way, united-philanthropy-forum/km_collaborative can be responsible for things like drupal core patches.
+
+* The patchLevel was set to -p2 for the drupal/core package, which keeps a rouge "b" folder from showing up in your web/core folder in cases
+where the patch doesn't apply cleanly.
+
 #### scripts/composer/ScriptHandler.php
 
 This is a direct copy of the same file in https://github.com/pantheon-systems/example-drops-8-composer and can be overwritten by upstream
