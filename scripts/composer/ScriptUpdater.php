@@ -30,7 +30,7 @@ class ScriptUpdater
     $event_name = $event->getName();
 
     if ($fs->exists($pantheon_install) && isset($ignored_files['km-collab-scaffold']['excludes'][$event_name])) {
-      $iterator = $finder->files()->in($pantheon_install);
+      $iterator = $finder->files()->in($pantheon_install)->ignoreDotFiles(FALSE);
 
       foreach ($ignored_files['km-collab-scaffold']['excludes'][$event_name] as $ignore_file) {
         $iterator->notName($pantheon_install . '/' . $ignore_file);
