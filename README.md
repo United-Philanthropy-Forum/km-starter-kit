@@ -4,156 +4,92 @@ This is the minimalist wrapper around the bulk of the KM Collaborative work done
 
 This code should only need to be referenced when you spin up a new Forum site.
 
+### Requirements:
+
+Building this project successfully requires a few things:
+
+1. The ability to push code to github, specifically, this repo: https://github.com/United-Philanthropy-Forum/km-collaborative
+   
+    Make sure you’ve added an SSH key to your profile on github, and that you are a collaborator or team member with Write permissions on the KM Collaborative repo.
+
+    This is working when you can visit the repo link above, and typing `git clone git@github.com:United-Philanthropy-Forum/km-collaborative.git` you see a result like “Cloning into 'km-collaborative'...”
+
+2. The ability to create a new repository in the United Philanthropy Forum namespace.
+   You’ll know this is working when you can visit this url without error: https://github.com/organizations/United-Philanthropy-Forum/repositories/new
+
+3. Access to Pantheon
+
+4. Access to the United Philanthropy Forum CircleCI instance
+
+5. Terminus
+
+6. The Pantheon Build tools https://github.com/pantheon-systems/terminus-build-tools-plugin/#installation
+
 ### Usage:
 
 Choose a new project name
 
-To start a new repository, run:
+To start a new project, run:
 
 ```
-composer create-project united-philanthropy-forum/km-starter-kit new-project-name --repository="{\"url\": \"https://github.com/United-Philanthropy-Forum/km-starter-kit\", \"type\": \"git\"}" --remove-vcs --stability=dev
+terminus build:project:create --team='ThinkShout' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.4.0 [new-project-name]
 ```
 
-Enter the new site folder:
+This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
 
-```
-cd new-project-name
-```
+https://github.com/United-Philanthropy-Forum/`[new-project-name]`
 
-Remove the part of your `.gitignore` file that ignores your lock file by deleting this line:
+dev-`[new-project-name]`.pantheonsite.io
 
-```
-# Gitignore for the starter kit.
-*
-!.gitignore
-!README.md
-!composer.json
-```
+The Pantheon site should also have the km_collaborative profile installed.
 
-Initialize a repository on github https://github.com/new that matches your project name and connect your local directory to it:
+### What to do if the build:project command fails:
 
-```
-git init
-git add .
-git commit -m "Initial commit."
-git remote add origin git@github.com:United-Philanthropy-Forum/new-project-name.git
-git push -u origin master
-```
+If the build:project command fails for some reason, part of the skeleton for the new site might already exist. If it does, delete both the Pantheon environment and the github repo created, if either exist.
 
-Delete the contents of this README.md above this line.
+There is a lot of information about the build tools, which might help with debugging, in the Build Tools Plugin README here: 
+https://github.com/pantheon-systems/terminus-build-tools-plugin
 
----
+### Maintaining this project
 
-# New Project Name (TODO, update this)
+There are minimal files in this project, as it's meant to solely ease the handoff between Pantheon's build tools and the
+KM Collaboration profile. So when an upstream change happens in the https://github.com/pantheon-systems/example-drops-8-composer project, the following update strategy can be used:
 
-### Initial build (existing repo)
+#### .gitignore
 
-From within your `~/Sites` directory run:
+This code belongs in this project only. It should only need to be updated if you need to add another file to this repo.
 
-```
-git clone git@github.com:United-Philanthropy-Forum/new-project-name.git
-cd new-project-name
-composer install
-```
+#### README.md
 
-### Building
+This code belongs in this project only. It should only need to be updated if changes are made to the process or requirements.
 
-Running the `robo configure` command will read the .env.dist, cli arguments and
-your local environment (`DEFAULT_PRESSFLOW_SETTINGS`) to generate a .env file. This file will be used to set
-the database and other standard configuration options. If no database name is provided, the project name and the git branch name will be used. If no database name is provided, the project name and the git branch name will be used. Note the argument to pass to robo configure can include: --db-pass; --db-user; --db-name; --db-host.
+#### composer.json
 
-```
-robo configure
-# Use an alternate DB password
-robo configure --db-pass=<YOUR LOCAL DATABASE PASSWORD>
-# Use an alternate DB name
-robo configure --db-name=<YOUR DATABASE NAME>
+This code was largely taken from the example drops repo, but was also largely customized. The customizations were:
+
+* "name", "description", and "homepage" where altered.
+
+* The "km_collaborative" repository was added to the "repositories" section.
+
+* The "require" section was stripped down to just:
+
+```yaml
+    "php": ">=7.0.8",
+    "pantheon-systems/example-drops-8-composer": "^2.3",
+    "united-philanthropy-forum/km_collaborative": "dev-master"
 ```
 
-The structure of `DEFAULT_PRESSFLOW_SETTINGS` if you want to set it locally is:
+* The "scripts/composer/ScriptUpdater.php" autoloader file was added, and the "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
+command was added post install, update, and build.
 
-```
-DEFAULT_PRESSFLOW_SETTINGS_={"databases":{"default":{"default":{"driver":"mysql","prefix":"","database":"","username":"root","password":"root","host":"localhost","port":3306}}},"conf":{"pressflow_smart_start":true,"pantheon_binding":null,"pantheon_site_uuid":null,"pantheon_environment":"local","pantheon_tier":"local","pantheon_index_host":"localhost","pantheon_index_port":8983,"redis_client_host":"localhost","redis_client_port":6379,"redis_client_password":"","file_public_path":"sites\/default\/files","file_private_path":"sites\/default\/files\/private","file_directory_path":"site\/default\/files","file_temporary_path":"\/tmp","file_directory_temp":"\/tmp","css_gzip_compression":false,"js_gzip_compression":false,"page_compression":false},"hash_salt":"","config_directory_name":"sites\/default\/config","drupal_hash_salt":""}
-```
+* The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
 
-### Configure Drush
+#### scripts/composer/ScriptHandler.php
 
-Drush options can be configured in the `.env` file. For example, to set a default uri for commands like `drush uli`, add this:
+This is a direct copy of the same file in https://github.com/pantheon-systems/example-drops-8-composer and can be overwritten by upstream
+changes at any time.
 
-```
-DRUSH_OPTIONS_URI="https://web.new-project-name.localhost"
-```
+#### scripts/composer/ScriptUpdater.php
 
-[Drush configuration docs](https://github.com/drush-ops/drush/blob/master/docs/using-drush-configuration.md)
-
-### Installing
-
-Running the robo install command will run composer install to add all required
-dependencies and then install the site and import the exported configuration.
-
-```
-robo install
-```
-
-### Testing
-
-Test are run automatically on CircleCI, but can be run locally as well with:
-
-```
-robo test
-```
-
-For more information refer to the `behat/README.md` file.
-
-## Updating contributed code
-
-### Updating contrib modules
-
-With `composer require drupal/{module_name}` you can download new dependencies to your
-installation.
-
-```
-composer require drupal/devel:8.*
-```
-
-### Applying patches to contrib modules
-
-If you need to apply patches (depending on the project being modified, a pull
-request is often a better solution), you can do so with the
-[composer-patches](https://github.com/cweagans/composer-patches) plugin.
-
-To add a patch to drupal module "foobar" insert the patches section in the `extra`
-section of composer.json:
-```json
-"extra": {
-    "patches": {
-        "drupal/foobar": {
-            "Patch description": "URL to patch"
-        }
-    }
-}
-```
-
-### Updating Drupal Core
-
-This project will attempt to keep all of your Drupal Core files up-to-date; the
-project [drupal-composer/drupal-scaffold](https://github.com/drupal-composer/drupal-scaffold)
-is used to ensure that your scaffold files are updated every time drupal/core is
-updated. If you customize any of the "scaffolding" files (commonly .htaccess),
-you may need to merge conflicts if any of your modified files are updated in a
-new release of Drupal core.
-
-Follow the steps below to update your core files.
-
-1. Run `composer update drupal/core --with-dependencies` to update Drupal Core and its dependencies.
-1. Run `git diff` to determine if any of the scaffolding files have changed.
-   Review the files for any changes and restore any customizations to
-  `.htaccess` or `robots.txt`.
-1. Commit everything all together in a single commit, so `web` will remain in
-   sync with the `core` when checking out branches or running `git bisect`.
-1. In the event that there are non-trivial conflicts in step 2, you may wish
-   to perform these steps on a branch, and use `git merge` to combine the
-   updated core files with your customized files. This facilitates the use
-   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple;
-   keeping all of your modifications at the beginning or end of the file is a
-   good strategy to keep merges easy.
+This code lives in this repository and is maintained here. It helps projects built with this repo continue to get the upstream changes from
+https://github.com/pantheon-systems/example-drops-8-composer
