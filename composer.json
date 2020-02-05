@@ -120,12 +120,24 @@
             }
         },
         "km-collab-scaffold": {
-            "excludes": [
-                "composer.json",
-                "composer.lock",
-                ".gitignore",
-                "README.md"
-            ]
+            "excludes": {
+                "post-install-cmd": [
+                    "composer.json",
+                    "composer.lock",
+                    ".gitignore",
+                    "README.md"
+                ],
+                "post-update-cmd": [
+                    "composer.json",
+                    "composer.lock",
+                    ".gitignore",
+                    "README.md"
+                ],
+                "post-create-project-cmd": [
+                    "composer.json",
+                    "composer.lock"
+                ]
+            }
         }
     },
     "config": {
