@@ -1,6 +1,5 @@
 # Gitignore for the starter kit.
 *
-!.gitignore
 !README.md
 !composer.json
 !/scripts/
