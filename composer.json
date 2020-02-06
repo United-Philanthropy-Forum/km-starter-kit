@@ -119,6 +119,7 @@
                 "[project-root]/.editorconfig": false
             }
         },
+        "enable-patching": true,
         "km-collab-scaffold": {
             "excludes": {
                 "post-install-cmd": [
@@ -138,6 +139,9 @@
                     "composer.lock"
                 ]
             }
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
         }
     },
     "config": {
