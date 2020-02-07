@@ -33,7 +33,7 @@ Choose a new project name
 To start a new project, run:
 
 ```
-terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.4.0 [new-project-name]
+terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.5.0 [new-project-name]
 ```
 
 This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
