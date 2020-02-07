@@ -10,27 +10,44 @@ Building this project successfully requires a few things:
 
 1. The ability to push code to github, specifically, [this repo](https://github.com/United-Philanthropy-Forum/km-collaborative)
    
-    Make sure you’ve [added an SSH key to your profile on github](https://www.inmotionhosting.com/support/website/git/how-to-add-ssh-keys-to-your-github-account/), and that you are a collaborator or team member with Write permissions on [the KM Collaborative repo](https://github.com/United-Philanthropy-Forum/km-collaborative).
+   Make sure you’ve [added an SSH key to your profile on github](https://www.inmotionhosting.com/support/website/git/how-to-add-ssh-keys-to-your-github-account/), and that you are a collaborator or team member with Write permissions on [the KM Collaborative repo](https://github.com/United-Philanthropy-Forum/km-collaborative).
 
-    This is working when you can visit the [repo](https://github.com/United-Philanthropy-Forum/km-collaborative), and when you can type `git clone git@github.com:United-Philanthropy-Forum/km-collaborative.git` into console and you see a result like “Cloning into 'km-collaborative'...”
+   This is working when you can visit the [repo home page](https://github.com/United-Philanthropy-Forum/km-collaborative), and see a little pencil in the top-right corner of the README.md file. That means you can edit that file.
+    
+   **If you don't have access**, one of the [United-Philanthropy-Forum owners](https://github.com/orgs/United-Philanthropy-Forum/people) will need to invite you.
 
 2. The ability to create a new repository in the United Philanthropy Forum namespace.
    You’ll know this is working when you can visit this url without error: https://github.com/organizations/United-Philanthropy-Forum/repositories/new
 
+   **If you don't have access**, one of the [United-Philanthropy-Forum owners](https://github.com/orgs/United-Philanthropy-Forum/people) will need to invite you.
+   
 3. Access to Pantheon. 
    You'll know this is working when you can go to [Create a new site in Pantheon](https://dashboard.pantheon.io/sites/create) and be able to choose United Philanthropy Forum from the dropdown.
+   
+   **If you don't have access**, one of the [United Philanthropy Forum Administrators](https://dashboard.pantheon.io/organizations/e8f1697b-fb5c-497c-88f1-5b8eaa98f48e#people) will need to invite you.
 
 4. Access to [the United Philanthropy Forum CircleCI instance](https://circleci.com/gh/United-Philanthropy-Forum). You'll know this is working when you can visit that url. 
 
-5. [Terminus](https://pantheon.io/docs/terminus/install)
+   **If you don't have access**, you might need to authenticate Circle -- you can log in with Github.
 
-6. [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin/#installation) 
+5. [Composer](https://getcomposer.org/) Globally available. You'll know this is working when you can type `composer --version` into your console and see something like "Composer version 1.8.5 2019-04-09 17:46:47"
+
+6. [Terminus > 2.0](https://pantheon.io/docs/terminus/install). You'll know this is working when you can type `terminus --version` into your console and see something like `Terminus 2.3.0`
+
+7. [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin/#installation). You'll know this is working when you can type `terminus build:project:create -h` into your console and see information about the build:project:create command, like this:
+
+   ```yaml
+    Usage:
+      build:project:create [options] [--] <source> [<target>]
+    ...
+    ```
+
 
 ### Usage:
 
 Choose a new project name
 
-To start a new project, run:
+To start a new project, decide on a new project name. It should be a url-safe string, so letters, dashes, and numbers:
 
 ```
 terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.5.0 [new-project-name]
