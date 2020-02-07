@@ -53,6 +53,9 @@ To start a new project, decide on a new project name. It should be a url-safe st
 terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.5.0 [new-project-name]
 ```
 
+The first time running this command, you will be asked to provide some API keys on Circle and Pantheon. Each step provides
+links and instructions on doing that. You will also be asked to set a User 1 password for the new site.
+
 This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
 
 https://github.com/United-Philanthropy-Forum/`[new-project-name]`
@@ -62,6 +65,15 @@ dev-`[new-project-name]`.pantheonsite.io
 The Pantheon site should also have the km_collaborative profile installed.
 
 ### What to do if the build:project command fails:
+
+If the `build:project:create` command fails because of a composer conflict, you can try to debug this by running the simpler
+build command locally:
+
+```yaml
+composer create-project united-philanthropy-forum/km-starter-kit:^0.5.0 [new-project-name]
+```
+
+If that fails as well, this repo needs to be updated.
 
 If the build:project command fails for some reason, part of the skeleton for the new site might already exist. If it does, delete both the Pantheon environment and the github repo created, if either exist.
 
