@@ -8,22 +8,23 @@ This code should only need to be referenced when you spin up a new Forum site.
 
 Building this project successfully requires a few things:
 
-1. The ability to push code to github, specifically, this repo: https://github.com/United-Philanthropy-Forum/km-collaborative
+1. The ability to push code to github, specifically, [this repo](https://github.com/United-Philanthropy-Forum/km-collaborative)
    
-    Make sure you’ve added an SSH key to your profile on github, and that you are a collaborator or team member with Write permissions on the KM Collaborative repo.
+    Make sure you’ve [added an SSH key to your profile on github](https://www.inmotionhosting.com/support/website/git/how-to-add-ssh-keys-to-your-github-account/), and that you are a collaborator or team member with Write permissions on [the KM Collaborative repo](https://github.com/United-Philanthropy-Forum/km-collaborative).
 
-    This is working when you can visit the repo link above, and typing `git clone git@github.com:United-Philanthropy-Forum/km-collaborative.git` you see a result like “Cloning into 'km-collaborative'...”
+    This is working when you can visit the [repo](https://github.com/United-Philanthropy-Forum/km-collaborative), and when you can type `git clone git@github.com:United-Philanthropy-Forum/km-collaborative.git` into console and you see a result like “Cloning into 'km-collaborative'...”
 
 2. The ability to create a new repository in the United Philanthropy Forum namespace.
    You’ll know this is working when you can visit this url without error: https://github.com/organizations/United-Philanthropy-Forum/repositories/new
 
-3. Access to Pantheon
+3. Access to Pantheon. 
+   You'll know this is working when you can go to [Create a new site in Pantheon](https://dashboard.pantheon.io/sites/create) and be able to choose XXX from the dropdown. (TODO, find out what Forum's Pantheon org is called.)
 
-4. Access to the United Philanthropy Forum CircleCI instance
+4. Access to [the United Philanthropy Forum CircleCI instance](https://circleci.com/gh/United-Philanthropy-Forum). You'll know this is working when you can visit that url. 
 
-5. Terminus
+5. [Terminus](https://pantheon.io/docs/terminus/install)
 
-6. The Pantheon Build tools https://github.com/pantheon-systems/terminus-build-tools-plugin/#installation
+6. [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin/#installation) 
 
 ### Usage:
 
@@ -32,7 +33,7 @@ Choose a new project name
 To start a new project, run:
 
 ```
-terminus build:project:create --team='ThinkShout' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.4.0 [new-project-name]
+terminus build:project:create --team='XXX' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.4.0 [new-project-name]
 ```
 
 This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
@@ -47,13 +48,12 @@ The Pantheon site should also have the km_collaborative profile installed.
 
 If the build:project command fails for some reason, part of the skeleton for the new site might already exist. If it does, delete both the Pantheon environment and the github repo created, if either exist.
 
-There is a lot of information about the build tools, which might help with debugging, in the Build Tools Plugin README here: 
-https://github.com/pantheon-systems/terminus-build-tools-plugin
+There is a lot of information about the build tools, which might help with debugging, in [The Pantheon Build tools README](https://github.com/pantheon-systems/terminus-build-tools-plugin)
 
 ### Maintaining this project
 
-There are minimal files in this project, as it's meant to solely ease the handoff between Pantheon's build tools and the
-KM Collaboration profile. So when an upstream change happens in the https://github.com/pantheon-systems/example-drops-8-composer project, the following update strategy can be used:
+There are minimal files in this project, as it's meant to solely ease the handoff between [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) and the
+[KM Collaboration profile](https://github.com/United-Philanthropy-Forum/km-collaborative). So when an upstream change happens in the [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer), the following update rules can be used to update this repo as well:
 
 #### .gitignore
 
@@ -84,17 +84,17 @@ command was added post install, update, and build.
 
 * The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
 
-* The option to allow upstream modules to apply patches was enabled via the "enable-patching" section. This way, united-philanthropy-forum/km_collaborative can be responsible for things like drupal core patches.
+* The option to allow upstream modules to apply patches was enabled via the "enable-patching" section. This way, the [KM Collaboration profile](https://github.com/United-Philanthropy-Forum/km-collaborative) can be responsible for things like drupal core patches.
 
 * The patchLevel was set to -p2 for the drupal/core package, which keeps a rouge "b" folder from showing up in your web/core folder in cases
 where the patch doesn't apply cleanly.
 
 #### scripts/composer/ScriptHandler.php
 
-This is a direct copy of the same file in https://github.com/pantheon-systems/example-drops-8-composer and can be overwritten by upstream
+This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and can be overwritten by upstream
 changes at any time.
 
 #### scripts/composer/ScriptUpdater.php
 
 This code lives in this repository and is maintained here. It helps projects built with this repo continue to get the upstream changes from
-https://github.com/pantheon-systems/example-drops-8-composer
+[the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer)
