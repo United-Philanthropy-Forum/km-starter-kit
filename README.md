@@ -50,6 +50,10 @@ If the build:project command fails for some reason, part of the skeleton for the
 
 There is a lot of information about the build tools, which might help with debugging, in [The Pantheon Build tools README](https://github.com/pantheon-systems/terminus-build-tools-plugin)
 
+### How to delete a project made with this starter kit.
+
+[The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) provides an []build:env:obliterate](https://github.com/pantheon-systems/terminus-build-tools-plugin#buildenvobliterate) command to delete a site that was spun up using the `build:project:create` command. It will delete both the Pantheon site and the repo, so any changes you've made either place will be lost forever.
+ 
 ### Maintaining this project
 
 There are minimal files in this project, as it's meant to solely ease the handoff between [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) and the
