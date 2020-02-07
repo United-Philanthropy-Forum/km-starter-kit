@@ -18,7 +18,7 @@ Building this project successfully requires a few things:
    You’ll know this is working when you can visit this url without error: https://github.com/organizations/United-Philanthropy-Forum/repositories/new
 
 3. Access to Pantheon. 
-   You'll know this is working when you can go to [Create a new site in Pantheon](https://dashboard.pantheon.io/sites/create) and be able to choose XXX from the dropdown. (TODO, find out what Forum's Pantheon org is called.)
+   You'll know this is working when you can go to [Create a new site in Pantheon](https://dashboard.pantheon.io/sites/create) and be able to choose United Philanthropy Forum from the dropdown.
 
 4. Access to [the United Philanthropy Forum CircleCI instance](https://circleci.com/gh/United-Philanthropy-Forum). You'll know this is working when you can visit that url. 
 
@@ -33,7 +33,7 @@ Choose a new project name
 To start a new project, run:
 
 ```
-terminus build:project:create --team='XXX' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.4.0 [new-project-name]
+terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.4.0 [new-project-name]
 ```
 
 This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
@@ -52,7 +52,7 @@ There is a lot of information about the build tools, which might help with debug
 
 ### How to delete a project made with this starter kit.
 
-[The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) provides an []build:env:obliterate](https://github.com/pantheon-systems/terminus-build-tools-plugin#buildenvobliterate) command to delete a site that was spun up using the `build:project:create` command. It will delete both the Pantheon site and the repo, so any changes you've made either place will be lost forever.
+[The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) provides an [build:env:obliterate](https://github.com/pantheon-systems/terminus-build-tools-plugin#buildenvobliterate) command to delete a site that was spun up using the `build:project:create` command. It will delete both the Pantheon site and the repo, so any changes you've made either place will be lost forever.
  
 ### Maintaining this project
 
