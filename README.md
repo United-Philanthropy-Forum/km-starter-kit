@@ -54,7 +54,7 @@ terminus build:project:create --team='United Philanthropy Forum' --org='United-P
 ```
 
 The first time running this command, you will be asked to provide some API keys on Circle and Pantheon. Each step provides
-links and instructions on doing that. You will also be asked to set a User 1 password for the new site.
+links and instructions on doing that. You will also be asked to set a User 1 password for the new site. (If the password request keeps repeating, the system is rejecting your password as insufficiently secure. Choose something more complex.)
 
 This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
 
