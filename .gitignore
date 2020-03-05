@@ -6,3 +6,5 @@
 !/scripts/composer/
 !/scripts/composer/ScriptHandler.php
 !/scripts/composer/ScriptUpdater.php
+!/.github/
+!/.github/pull_request_template.md
