@@ -112,6 +112,8 @@ This code was largely taken from the example drops repo, but was also largely cu
     "united-philanthropy-forum/km_collaborative": "dev-master"
 ```
 
+* The "minimum-stability" is set to "dev" so that km_collaborative can pull in dev-level modules (anything with RC, alpha, or beta)
+
 * The "scripts/composer/ScriptUpdater.php" autoloader file was added, and the "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
 command was added post install, update, and build.
 
