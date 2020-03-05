@@ -16,7 +16,6 @@ Check off the following boxes before asking someone to review this PR.
 terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' --stability=dev "united-philanthropy-forum/km-starter-kit:dev-[the-branch]  [the-new-project]
 ```
 
-dev-[new-project-name].pantheonsite.io
-- [ ] Validate that a new site exists at `dev-[new-project-name].pantheonsite.io`
-- [ ] Validate the repo exists at https://github.com/United-Philanthropy-Forum/`[new-project-name]`
-- [ ] Delete the test environment when you're done, by running `terminus build:env:obliterate [new-project-name]`
+- [ ] Validate that a new site exists at https://dev-[the-new-project].pantheonsite.io
+- [ ] Validate the repo exists at https://github.com/United-Philanthropy-Forum/[the-new-project]
+- [ ] Delete the test environment when you're done, by running `terminus build:env:obliterate [the-new-project]`
