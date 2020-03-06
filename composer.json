@@ -18,7 +18,7 @@
     "require": {
         "php": ">=7.0.8",
         "pantheon-systems/example-drops-8-composer": "^2.3",
-        "united-philanthropy-forum/km_collaborative": "dev-master"
+        "united-philanthropy-forum/km_collaborative": "^0.1.1"
     },
     "require-dev": {
         "behat/behat": "3.*",
