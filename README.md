@@ -50,7 +50,7 @@ Choose a new project name
 To start a new project, decide on a new project name. It should be a url-safe string, so letters, dashes, and numbers:
 
 ```
-terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit:^0.5.0 [new-project-name]
+terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit [new-project-name]
 ```
 
 The first time running this command, you will be asked to provide some API keys on Circle and Pantheon. Each step provides
@@ -70,7 +70,7 @@ If the `build:project:create` command fails because of a composer conflict, you 
 build command locally:
 
 ```yaml
-composer create-project united-philanthropy-forum/km-starter-kit:^0.5.0 [new-project-name]
+composer create-project united-philanthropy-forum/km-starter-kit [new-project-name]
 ```
 
 If that fails as well, this repo needs to be updated.
@@ -109,7 +109,13 @@ This code was largely taken from the example drops repo, but was also largely cu
 ```yaml
     "php": ">=7.0.8",
     "pantheon-systems/example-drops-8-composer": "^2.3",
-    "united-philanthropy-forum/km_collaborative": "dev-master"
+    "united-philanthropy-forum/km_collaborative": "*"
+```
+
+* The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds:
+
+```yaml
+"zaporylie/composer-drupal-optimizations": "^1.1"
 ```
 
 * The "minimum-stability" is set to "dev" so that km_collaborative can pull in dev-level modules (anything with RC, alpha, or beta)
