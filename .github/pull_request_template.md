@@ -19,3 +19,4 @@ terminus build:project:create --team='United Philanthropy Forum' --org='United-P
 - [ ] Validate that a new site exists at https://dev-[the-new-project].pantheonsite.io
 - [ ] Validate the repo exists at https://github.com/United-Philanthropy-Forum/[the-new-project]
 - [ ] Delete the test environment when you're done, by running `terminus build:env:obliterate [the-new-project]`
+- [ ] Once this PR is merged, cut a new tag so the `create-project` commands will get the latest and greatest.
