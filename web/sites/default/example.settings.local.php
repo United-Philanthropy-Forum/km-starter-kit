@@ -155,6 +155,7 @@ $settings['skip_permissions_hardening'] = TRUE;
  */
 $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'twig_xdebug'];
 $settings['config_sync_directory'] = '../config';
+$settings['install_profile'] = 'km_collaborative';
 
 // Paste the values from your first install here:
 // $databases['default']['default'] = array ();
