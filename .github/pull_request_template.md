@@ -13,7 +13,7 @@ Check off the following boxes before asking someone to review this PR.
 - [ ] Run this:
 
 ```yaml
-terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' --stability=dev "united-philanthropy-forum/km-starter-kit:dev-[the-branch]" [the-new-project]
+COMPOSER_MEMORY_LIMIT=-1 terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' --stability=dev "united-philanthropy-forum/km-starter-kit:dev-[the-branch]" [the-new-project]
 ```
 
 - [ ] Validate that a new site exists at https://dev-[the-new-project].pantheonsite.io
