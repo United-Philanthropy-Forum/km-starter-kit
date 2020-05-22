@@ -111,7 +111,8 @@
         },
         "drupal-scaffold": {
             "allowed-packages": [
-                "pantheon-systems/drupal-integrations"
+                "pantheon-systems/drupal-integrations",
+                "united-philanthropy-forum/km_collaborative"
             ],
             "locations": {
                 "web-root": "./web"
