@@ -107,10 +107,10 @@ This code was largely taken from the example drops repo, but was also largely cu
 * The "require" section was stripped down to just:
 
 ```yaml
-    "php": ">=7.0.8",
-    "pantheon-systems/example-drops-8-composer": "^2.3",
     "united-philanthropy-forum/km_collaborative": "*"
 ```
+
+* The "*" above was later set to more restricted targeting of releases of km_collaborative.
 
 * The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds:
 
