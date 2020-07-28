@@ -9,6 +9,10 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
         "km_collaborative": {
             "type": "git",
             "url": "https://github.com/United-Philanthropy-Forum/km-collaborative"
@@ -16,7 +20,7 @@
 
     },
     "require": {
-        "united-philanthropy-forum/km_collaborative": "*"
+        "united-philanthropy-forum/km_collaborative": "^0.1.4"
     },
     "require-dev": {
         "behat/behat": "3.*",
