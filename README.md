@@ -66,8 +66,9 @@ The Pantheon site should also have the km_collaborative profile installed.
 
 ### What to do if the build:project command fails:
 
-If the `build:project:create` command fails because of a composer conflict, you can try to debug this by running the simpler
-build command locally:
+If the `build:project:create` command fails when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, edit your php configuration and raise the memory limit.
+
+If the command fails because of a composer conflict, you can try to debug this by running the simpler build command locally:
 
 ```yaml
 composer create-project united-philanthropy-forum/km-starter-kit [new-project-name]
