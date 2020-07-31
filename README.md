@@ -108,10 +108,8 @@ This code was largely taken from the example drops repo, but was also largely cu
 * The "require" section was stripped down to just:
 
 ```yaml
-    "united-philanthropy-forum/km_collaborative": "*"
+    "united-philanthropy-forum/km_collaborative": ">=0.1.4"
 ```
-
-* The "*" above was later set to more restricted targeting of releases of km_collaborative.
 
 * The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds:
 

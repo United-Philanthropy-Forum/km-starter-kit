@@ -20,7 +20,7 @@
 
     },
     "require": {
-        "united-philanthropy-forum/km_collaborative": "^0.1.4"
+        "united-philanthropy-forum/km_collaborative": ">=0.1.4"
     },
     "require-dev": {
         "behat/behat": "3.*",
