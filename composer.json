@@ -9,6 +9,10 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
+        "1": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
         "km_collaborative": {
             "type": "git",
             "url": "https://github.com/United-Philanthropy-Forum/km-collaborative"
@@ -16,9 +20,7 @@
 
     },
     "require": {
-        "php": ">=7.0.8",
-        "pantheon-systems/example-drops-8-composer": "^2.3",
-        "united-philanthropy-forum/km_collaborative": "*"
+        "united-philanthropy-forum/km_collaborative": ">=0.1.4"
     },
     "require-dev": {
         "behat/behat": "3.*",

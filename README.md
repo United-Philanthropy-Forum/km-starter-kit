@@ -66,8 +66,9 @@ The Pantheon site should also have the km_collaborative profile installed.
 
 ### What to do if the build:project command fails:
 
-If the `build:project:create` command fails because of a composer conflict, you can try to debug this by running the simpler
-build command locally:
+If the `build:project:create` command fails when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, edit your php configuration and raise the memory limit.
+
+If the command fails because of a composer conflict, you can try to debug this by running the simpler build command locally:
 
 ```yaml
 composer create-project united-philanthropy-forum/km-starter-kit [new-project-name]
@@ -107,9 +108,7 @@ This code was largely taken from the example drops repo, but was also largely cu
 * The "require" section was stripped down to just:
 
 ```yaml
-    "php": ">=7.0.8",
-    "pantheon-systems/example-drops-8-composer": "^2.3",
-    "united-philanthropy-forum/km_collaborative": "*"
+    "united-philanthropy-forum/km_collaborative": ">=0.1.4"
 ```
 
 * The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds:
