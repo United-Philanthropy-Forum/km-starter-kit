@@ -135,11 +135,6 @@ command was added post install, update, and build.
 * The patchLevel was set to -p2 for the drupal/core package, which keeps a rouge "b" folder from showing up in your web/core folder in cases
 where the patch doesn't apply cleanly.
 
-#### scripts/composer/ScriptHandler.php
-
-This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and can be overwritten by upstream
-changes at any time.
-
 #### scripts/composer/ScriptUpdater.php
 
 This code lives in this repository and is maintained here. It helps projects built with this repo continue to get the upstream changes from
