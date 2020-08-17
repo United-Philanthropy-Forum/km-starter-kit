@@ -109,6 +109,8 @@ This code was largely taken from the example drops repo, but was also largely cu
 
 * The "km_collaborative" repository was added to the "repositories" section.
 
+* The https://asset-packagist.org repo was added as a source for packages. This allows us to pull libraries from bower and npm.
+
 * The "require" section was stripped down to just:
 
 ```yaml
@@ -127,6 +129,10 @@ This code was largely taken from the example drops repo, but was also largely cu
 command was added post install, update, and build.
 
 * The "united-philanthropy-forum/km_collaborative" package is added to the list of items that can pull in scaffold files. This allows km-collaborative the ability to push top-level useful files to all sites using it.
+
+* The "compile-code" script is added, which compiles the kmc base theme into css/js instead of sass.
+
+* The "post-drupal-scaffold-cmd" sets the permission levels for a couple of circle-build files to 755, so it can run on circle as a bash script. These files are also customized, along with the '.circleci/config.yml' file, to belong to the site-specific repository, instead of being pulled from the example drops repo.
 
 * The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
 
