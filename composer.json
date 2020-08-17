@@ -154,7 +154,9 @@
                 ],
                 "post-create-project-cmd": [
                     "composer.json",
-                    "composer.lock"
+                    "composer.lock",
+                    ".circleci/config.yml",
+                    ".ci/deploy/pantheon/dev-multidev"
                 ]
             }
         },
