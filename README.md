@@ -9,24 +9,24 @@ This code should only need to be referenced when you spin up a new Forum site.
 Building this project successfully requires a few things:
 
 1. The ability to push code to github, specifically, [this repo](https://github.com/United-Philanthropy-Forum/km-collaborative)
-   
+
    Make sure you’ve [added an SSH key to your profile on github](https://www.inmotionhosting.com/support/website/git/how-to-add-ssh-keys-to-your-github-account/), and that you are a collaborator or team member with Write permissions on [the KM Collaborative repo](https://github.com/United-Philanthropy-Forum/km-collaborative).
 
    This is working when you can visit the [repo home page](https://github.com/United-Philanthropy-Forum/km-collaborative), and see a little pencil in the top-right corner of the README.md file. That means you can edit that file.
-    
+
    **If you don't have access**, one of the [United-Philanthropy-Forum owners](https://github.com/orgs/United-Philanthropy-Forum/people) will need to invite you.
 
 2. The ability to create a new repository in the United Philanthropy Forum namespace.
    You’ll know this is working when you can visit this url without error: https://github.com/organizations/United-Philanthropy-Forum/repositories/new
 
    **If you don't have access**, one of the [United-Philanthropy-Forum owners](https://github.com/orgs/United-Philanthropy-Forum/people) will need to invite you.
-   
-3. Access to Pantheon. 
+
+3. Access to Pantheon.
    You'll know this is working when you can go to [Create a new site in Pantheon](https://dashboard.pantheon.io/sites/create) and be able to choose United Philanthropy Forum from the dropdown.
-   
+
    **If you don't have access**, one of the [United Philanthropy Forum Administrators](https://dashboard.pantheon.io/organizations/e8f1697b-fb5c-497c-88f1-5b8eaa98f48e#people) will need to invite you.
 
-4. Access to [the United Philanthropy Forum CircleCI instance](https://circleci.com/gh/United-Philanthropy-Forum). You'll know this is working when you can visit that url. 
+4. Access to [the United Philanthropy Forum CircleCI instance](https://circleci.com/gh/United-Philanthropy-Forum). You'll know this is working when you can visit that url.
 
    **If you don't have access**, you might need to authenticate Circle -- you can log in with Github.
 
@@ -82,8 +82,12 @@ There is a lot of information about the build tools, which might help with debug
 
 ### How to delete a project made with this starter kit.
 
-[The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) provides an [build:env:obliterate](https://github.com/pantheon-systems/terminus-build-tools-plugin#buildenvobliterate) command to delete a site that was spun up using the `build:project:create` command. It will delete both the Pantheon site and the repo, so any changes you've made either place will be lost forever.
- 
+[The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) provides an [build:env:obliterate](https://github.com/pantheon-systems/terminus-build-tools-plugin#buildenvobliterate) command to delete a site that was spun up using the `build:project:create` command. It will delete both the Pantheon site and the repo, so any changes you've made either place will be lost forever. Example:
+
+```
+terminus build:env:obliterate [new-project-name]
+```
+
 ### Maintaining this project
 
 There are minimal files in this project, as it's meant to solely ease the handoff between [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) and the
@@ -105,13 +109,15 @@ This code was largely taken from the example drops repo, but was also largely cu
 
 * The "km_collaborative" repository was added to the "repositories" section.
 
+* The https://asset-packagist.org repo was added as a source for packages. This allows us to pull libraries from bower and npm.
+
 * The "require" section was stripped down to just:
 
 ```yaml
     "united-philanthropy-forum/km_collaborative": ">=0.1.4"
 ```
 
-* The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds:
+* The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds, and adds drupal console:
 
 ```yaml
 "zaporylie/composer-drupal-optimizations": "^1.1"
@@ -124,6 +130,10 @@ command was added post install, update, and build.
 
 * The "united-philanthropy-forum/km_collaborative" package is added to the list of items that can pull in scaffold files. This allows km-collaborative the ability to push top-level useful files to all sites using it.
 
+* The "compile-code" script is added, which compiles the kmc base theme into css/js instead of sass.
+
+* The "post-drupal-scaffold-cmd" sets the permission levels for a couple of circle-build files to 755, so it can run on circle as a bash script. These files are also customized, along with the '.circleci/config.yml' file, to belong to the site-specific repository, instead of being pulled from the example drops repo.
+
 * The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
 
 * The option to allow upstream modules to apply patches was enabled via the "enable-patching" section. This way, the [KM Collaboration profile](https://github.com/United-Philanthropy-Forum/km-collaborative) can be responsible for things like drupal core patches.
@@ -133,8 +143,7 @@ where the patch doesn't apply cleanly.
 
 #### scripts/composer/ScriptHandler.php
 
-This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and can be overwritten by upstream
-changes at any time.
+This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on "create-project". This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
 
 #### scripts/composer/ScriptUpdater.php
 

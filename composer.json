@@ -17,24 +17,23 @@
             "type": "git",
             "url": "https://github.com/United-Philanthropy-Forum/km-collaborative"
         }
-
     },
     "require": {
         "united-philanthropy-forum/km_collaborative": ">=0.1.4"
     },
     "require-dev": {
-        "behat/behat": ">=3.0",
         "behat/mink": ">=1.7",
         "behat/mink-extension": ">=2.2",
         "behat/mink-goutte-driver": ">=1.2",
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
         "dmore/behat-chrome-extension": ">=1.3",
         "drupal/coder": ">=8.3.1",
-        "drupal/drupal-extension": ">=3",
+        "drupal/console": ">=1",
+        "drupal/drupal-extension": ">=4.1",
         "genesis/behat-fail-aid": ">=2.1",
         "jcalderonzumba/mink-phantomjs-driver": ">=0.3.1",
         "mikey179/vfsstream": ">=1.2",
-        "phpunit/phpunit": ">=4.8",
+        "phpunit/phpunit": ">=6.5",
         "squizlabs/php_codesniffer": ">=3.4.0",
         "zaporylie/composer-drupal-optimizations": ">=1.1"
     },
@@ -67,7 +66,8 @@
         "post-install-cmd": [
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
+            "DrupalProject\\composer\\ScriptUpdater::createParentFiles",
+            "@compile-code"
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
@@ -77,6 +77,13 @@
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
+        ],
+        "compile-code": [
+            "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme",
+            "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme"
+        ],
+        "post-drupal-scaffold-cmd": [
+            "chmod 755 .ci/build/multidev-save && chmod 755 .ci/deploy/pantheon/dev-multidev"
         ]
     },
     "extra": {
@@ -85,7 +92,9 @@
                 "type:drupal-core"
             ],
             "web/libraries/{$name}": [
-                "type:drupal-library"
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -103,6 +112,7 @@
                 "type:quicksilver-script"
             ]
         },
+        "installer-types": ["bower-asset", "npm-asset"],
         "build-env": {
             "install-cms": [
                 "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
@@ -128,17 +138,23 @@
                     "composer.json",
                     "composer.lock",
                     ".gitignore",
-                    "README.md"
+                    "README.md",
+                    ".circleci/config.yml",
+                    ".ci/deploy/pantheon/dev-multidev"
                 ],
                 "post-update-cmd": [
                     "composer.json",
                     "composer.lock",
                     ".gitignore",
-                    "README.md"
+                    "README.md",
+                    ".circleci/config.yml",
+                    ".ci/deploy/pantheon/dev-multidev"
                 ],
                 "post-create-project-cmd": [
                     "composer.json",
-                    "composer.lock"
+                    "composer.lock",
+                    ".circleci/config.yml",
+                    ".ci/deploy/pantheon/dev-multidev"
                 ]
             }
         },
