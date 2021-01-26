@@ -47,10 +47,20 @@ Building this project successfully requires a few things:
 
 Choose a new project name
 
-To start a new project, decide on a new project name. It should be a url-safe string, so letters, dashes, and numbers:
+To start a new project:
+- decide on a new project name -- it should be a url-safe string, so letters, dashes, and numbers
+- confirm which Pantheon "Team" to build the site under (This is a unique name string, but it can include spaces -- visible in Pantheon under "Team")
+- confirm which Github Organization the development repository will live under (this is also a URL-safe string, visible in github)
+
+For example, to create a site with the project for the ThinkShout Foundation:
+Project name: thinkshout-foundation
+Pantheon Team: United Philanthropy Forum
+Github Org: United-Philanthropy-Forum
+
+You would run this command:
 
 ```
-terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit [new-project-name]
+terminus build:project:create --team='United Philanthropy Forum' --org='United-Philanthropy-Forum' --visibility='private' united-philanthropy-forum/km-starter-kit thinkshout-foundation
 ```
 
 The first time running this command, you will be asked to provide some API keys on Circle and Pantheon. Each step provides
