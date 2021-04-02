@@ -68,9 +68,9 @@ links and instructions on doing that. You will also be asked to set a User 1 pas
 
 This will create a new repository in the United Philanthropy Forum github repo, as well as a new Pantheon site:
 
-https://github.com/United-Philanthropy-Forum/`[new-project-name]`
+https://github.com/United-Philanthropy-Forum/thinkshout-foundation
 
-dev-`[new-project-name]`.pantheonsite.io
+dev-thinkshout-foundation.pantheonsite.io
 
 The Pantheon site should also have the km_collaborative profile installed.
 
@@ -81,7 +81,7 @@ If the `build:project:create` command fails when running `composer create-projec
 If the command fails because of a composer conflict, you can try to debug this by running the simpler build command locally:
 
 ```yaml
-composer create-project united-philanthropy-forum/km-starter-kit [new-project-name]
+composer create-project united-philanthropy-forum/km-starter-kit thinkshout-foundation
 ```
 
 If that fails as well, this repo needs to be updated.
@@ -95,7 +95,7 @@ There is a lot of information about the build tools, which might help with debug
 [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin) provides an [build:env:obliterate](https://github.com/pantheon-systems/terminus-build-tools-plugin#buildenvobliterate) command to delete a site that was spun up using the `build:project:create` command. It will delete both the Pantheon site and the repo, so any changes you've made either place will be lost forever. Example:
 
 ```
-terminus build:env:obliterate [new-project-name]
+terminus build:env:obliterate thinkshout-foundation
 ```
 
 ### Maintaining this project
