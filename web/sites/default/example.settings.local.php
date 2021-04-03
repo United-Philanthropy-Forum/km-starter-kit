@@ -39,7 +39,7 @@ assert_options(ASSERT_ACTIVE, TRUE);
  * Enable local development services.
  */
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/services.local.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/services.local.yml';
 
 /**
  * Show all error messages, with backtrace information.
@@ -154,9 +154,25 @@ $settings['skip_permissions_hardening'] = TRUE;
  * the language or field module.
  */
 $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'twig_xdebug'];
+
+/**
+ * If you are using config_suite with config_split, uncomment this setting:
+ */
+// $config['config_split.config_split.local']['status'] = TRUE;
+
 $settings['config_sync_directory'] = '../config';
 $settings['install_profile'] = 'km_collaborative';
 
 // Paste the values from your first install here:
-// $databases['default']['default'] = array ();
 // $settings['hash_salt'] = '';
+// $databases['default']['default'] = [
+//  'database' => 'YOUR-NEW-DB',
+//  'username' => 'root',
+//  'password' => 'root',
+//  'host' => 'localhost',
+//  'port' => '3306',
+//  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+//  'driver' => 'mysql',
+//  'prefix' => '',
+//  'collation' => 'utf8mb4_general_ci',
+//];
