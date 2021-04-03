@@ -67,7 +67,8 @@
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
+            "DrupalProject\\composer\\ScriptUpdater::createParentFiles",
+            "@compile-code"
         ],
         "post-create-project-cmd": [
             "@drupal-scaffold",
