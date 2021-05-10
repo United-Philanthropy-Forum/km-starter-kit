@@ -157,6 +157,18 @@
         },
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/anchor_link/composer.libraries.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "ignore-duplicates": false,
+            "merge-dev": false,
+            "merge-extra": false,
+            "merge-extra-deep": false,
+            "merge-scripts": false
         }
     },
     "config": {
