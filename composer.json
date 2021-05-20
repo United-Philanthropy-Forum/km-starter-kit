@@ -76,8 +76,8 @@
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
         "compile-code": [
-            "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme",
-            "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme"
+            "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true",
+            "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true"
         ],
         "post-drupal-scaffold-cmd": [
             "chmod 755 .ci/build/multidev-save && chmod 755 .ci/deploy/pantheon/dev-multidev"
