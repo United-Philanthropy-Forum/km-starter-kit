@@ -133,6 +133,12 @@ This code was largely taken from the example drops repo, but was also largely cu
 "zaporylie/composer-drupal-optimizations": "^1.1"
 ```
 
+* The "require-dev" section adds the "Robo-Drupal" project to provide useful local installation scripts:
+
+```yaml
+"thinkshout/robo-drupal": "2.0-rc-1",
+```
+
 * The "minimum-stability" is set to "dev" so that km_collaborative can pull in dev-level modules (anything with RC, alpha, or beta)
 
 * The "scripts/composer/ScriptUpdater.php" autoloader file was added, and the "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
