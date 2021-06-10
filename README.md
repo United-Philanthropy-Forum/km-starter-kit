@@ -151,6 +151,9 @@ command was added post install, update, and build.
 * The patchLevel was set to -p2 for the drupal/core package, which keeps a rouge "b" folder from showing up in your web/core folder in cases
 where the patch doesn't apply cleanly.
 
+* The merge-plugin options from the [composer-merge-plugin](https://github.com/wikimedia/composer-merge-plugin)
+  were added to allow the anchor_link module to include custom ckeditor packages not available via packagist.
+
 #### scripts/composer/ScriptHandler.php
 
 This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on "create-project". This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
