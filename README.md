@@ -30,7 +30,7 @@ Building this project successfully requires a few things:
 
    **If you don't have access**, you might need to authenticate Circle -- you can log in with Github.
 
-5. [Composer > 1.9.3](https://getcomposer.org/) Globally available. You'll know this is working when you can type `composer --version` into your console and see something like "Composer version 1.9.3 2020-02-04 12:58:49"
+5. [Composer > 2.0.0](https://getcomposer.org/) Globally available. You'll know this is working when you can type `composer --version` into your console and see something like "Composer version 2.1.6 2021-08-19 17:11:08"
 
 6. [Terminus > 2.0](https://pantheon.io/docs/terminus/install). You'll know this is working when you can type `terminus --version` into your console and see something like `Terminus 2.3.0`
 
