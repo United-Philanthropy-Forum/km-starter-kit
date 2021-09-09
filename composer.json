@@ -62,13 +62,11 @@
         "post-install-cmd": [
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "DrupalProject\\composer\\ScriptUpdater::createParentFiles",
-            "@compile-code"
+            "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "DrupalProject\\composer\\ScriptUpdater::createParentFiles",
-            "@compile-code"
+            "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
         "post-create-project-cmd": [
             "@drupal-scaffold",
