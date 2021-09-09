@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "united-philanthropy-forum/km_collaborative": ">=0.1.4"
+        "united-philanthropy-forum/km_collaborative": "dev-issue-698-scaffold2"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
@@ -78,9 +78,6 @@
         "compile-code": [
             "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true",
             "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true"
-        ],
-        "post-drupal-scaffold-cmd": [
-            "chmod 755 .ci/build/multidev-save && chmod 755 .ci/deploy/pantheon/dev-multidev"
         ]
     },
     "extra": {
@@ -132,27 +129,14 @@
         "km-collab-scaffold": {
             "excludes": {
                 "post-install-cmd": [
-                    "composer.json",
-                    "composer.lock",
-                    ".gitignore",
-                    "README.md",
-                    ".circleci/config.yml",
-                    ".ci/deploy/pantheon/dev-multidev"
+                    ".ci/test/visual-regression/backstopConfig.js",
+                    "README.md"
                 ],
                 "post-update-cmd": [
-                    "composer.json",
-                    "composer.lock",
-                    ".gitignore",
-                    "README.md",
-                    ".circleci/config.yml",
-                    ".ci/deploy/pantheon/dev-multidev"
+                    ".ci/test/visual-regression/backstopConfig.js",
+                    "README.md"
                 ],
-                "post-create-project-cmd": [
-                    "composer.json",
-                    "composer.lock",
-                    ".circleci/config.yml",
-                    ".ci/deploy/pantheon/dev-multidev"
-                ]
+                "post-create-project-cmd": []
             }
         },
         "patchLevel": {

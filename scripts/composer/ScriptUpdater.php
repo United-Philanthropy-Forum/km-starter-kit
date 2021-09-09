@@ -24,7 +24,7 @@ class ScriptUpdater
     $fs = new Filesystem();
     $finder = new Finder();
     $root = getcwd();
-    $drops_file = '/vendor/pantheon-systems/example-drops-8-composer';
+    $drops_file = '/web/profiles/contrib/km_collaborative/assets';
     $ignored_files = $event->getComposer()->getPackage()->getExtra() + ['km-collab-scaffold' => [ 'excludes' => []]];
     $pantheon_install = $root . $drops_file;
     $event_name = $event->getName();
