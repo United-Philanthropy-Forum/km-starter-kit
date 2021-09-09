@@ -113,11 +113,11 @@ This code belongs in this project only. It should only need to be updated if cha
 
 #### composer.json
 
-This code was largely taken from the example drops repo, but was also largely customized to the point where it is to different from the composer.json file in the drops to be worth parsing.
+This code was largely taken from [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer), but has been customized to the point where it is too different to be worth parsing.
 
 #### scripts/composer/ScriptHandler.php
 
-This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on "create-project". This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
+This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on in the [km-collaborative profile](https://github.com/United-Philanthropy-Forum/km-collaborative). This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
 
 #### scripts/composer/ScriptUpdater.php
 
