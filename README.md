@@ -41,7 +41,7 @@ Building this project successfully requires a few things:
       build:project:create [options] [--] <source> [<target>]
     ...
     ```
-
+8. You have run the [One time setup steps](https://github.com/United-Philanthropy-Forum/km-starter-kit/wiki/How-to-test-changes-to-this-starter-kit#one-time)
 
 ### Usage:
 
@@ -56,6 +56,8 @@ For example, to create a site with the project for the ThinkShout Foundation:
 Project name: thinkshout-foundation
 Pantheon Team: United Philanthropy Forum
 Github Org: United-Philanthropy-Forum
+
+Be prepared for this command to take 30 minutes. That means making sure your computer doesn't go to sleep in that time. If you're experiencing timeouts, you might try adding a ["ServerAliveInterval"](https://unix.stackexchange.com/a/2013) to keep Pantheon connected to your machine during install.
 
 You would run this command:
 
