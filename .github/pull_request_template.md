@@ -1,7 +1,6 @@
 ### For the PR creator:
 Check off the following boxes before asking someone to review this PR.
 
-- [ ] If this PR changes the `composer.json` file, is there accompanying text in the `README.md` file explaining that change?
 - [ ] Update the "How to test this branch" instructions below by replacing `[the-branch]` with the name of this branch, and 
 `[the-new-project]` with an example project name.
 

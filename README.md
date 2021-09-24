@@ -30,7 +30,7 @@ Building this project successfully requires a few things:
 
    **If you don't have access**, you might need to authenticate Circle -- you can log in with Github.
 
-5. [Composer > 1.9.3](https://getcomposer.org/) Globally available. You'll know this is working when you can type `composer --version` into your console and see something like "Composer version 1.9.3 2020-02-04 12:58:49"
+5. [Composer > 2.0.0](https://getcomposer.org/) Globally available. You'll know this is working when you can type `composer --version` into your console and see something like "Composer version 2.1.6 2021-08-19 17:11:08"
 
 6. [Terminus > 2.0](https://pantheon.io/docs/terminus/install). You'll know this is working when you can type `terminus --version` into your console and see something like `Terminus 2.3.0`
 
@@ -41,7 +41,7 @@ Building this project successfully requires a few things:
       build:project:create [options] [--] <source> [<target>]
     ...
     ```
-
+8. You have run the [One time setup steps](https://github.com/United-Philanthropy-Forum/km-starter-kit/wiki/How-to-test-changes-to-this-starter-kit#one-time)
 
 ### Usage:
 
@@ -56,6 +56,8 @@ For example, to create a site with the project for the ThinkShout Foundation:
 Project name: thinkshout-foundation
 Pantheon Team: United Philanthropy Forum
 Github Org: United-Philanthropy-Forum
+
+Be prepared for this command to take 30 minutes. That means making sure your computer doesn't go to sleep in that time. If you're experiencing timeouts, you might try adding a ["ServerAliveInterval"](https://unix.stackexchange.com/a/2013) to keep Pantheon connected to your machine during install.
 
 You would run this command:
 
@@ -113,52 +115,12 @@ This code belongs in this project only. It should only need to be updated if cha
 
 #### composer.json
 
-This code was largely taken from the example drops repo, but was also largely customized. The customizations were:
-
-* "name", "description", and "homepage" where altered.
-
-* The "km_collaborative" repository was added to the "repositories" section.
-
-* The https://asset-packagist.org repo was added as a source for packages. This allows us to pull libraries from bower and npm.
-
-* The "require" section was stripped down to just:
-
-```yaml
-    "united-philanthropy-forum/km_collaborative": ">=0.1.4"
-```
-
-* The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds, and adds drupal console:
-
-```yaml
-"zaporylie/composer-drupal-optimizations": "^1.1"
-```
-
-* The "minimum-stability" is set to "dev" so that km_collaborative can pull in dev-level modules (anything with RC, alpha, or beta)
-
-* The "scripts/composer/ScriptUpdater.php" autoloader file was added, and the "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
-command was added post install, update, and build.
-
-* The "united-philanthropy-forum/km_collaborative" package is added to the list of items that can pull in scaffold files. This allows km-collaborative the ability to push top-level useful files to all sites using it.
-
-* The "compile-code" script is added, which compiles the kmc base theme into css/js instead of sass.
-
-* The "post-drupal-scaffold-cmd" sets the permission levels for a couple of circle-build files to 755, so it can run on circle as a bash script. These files are also customized, along with the '.circleci/config.yml' file, to belong to the site-specific repository, instead of being pulled from the example drops repo.
-
-* The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
-
-* The option to allow upstream modules to apply patches was enabled via the "enable-patching" section. This way, the [KM Collaboration profile](https://github.com/United-Philanthropy-Forum/km-collaborative) can be responsible for things like drupal core patches.
-
-* The patchLevel was set to -p2 for the drupal/core package, which keeps a rouge "b" folder from showing up in your web/core folder in cases
-where the patch doesn't apply cleanly.
-
-* The merge-plugin options from the [composer-merge-plugin](https://github.com/wikimedia/composer-merge-plugin)
-  were added to allow the anchor_link module to include custom ckeditor packages not available via packagist.
+This code was largely taken from [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer), but has been customized to the point where it is too different to be worth parsing.
 
 #### scripts/composer/ScriptHandler.php
 
-This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on "create-project". This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
+This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on in the [km-collaborative profile](https://github.com/United-Philanthropy-Forum/km-collaborative). This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
 
 #### scripts/composer/ScriptUpdater.php
 
-This code lives in this repository and is maintained here. It helps projects built with this repo continue to get the upstream changes from
-[the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer)
+This code lives in this repository and is maintained in the [km-collaborative profile](https://github.com/United-Philanthropy-Forum/km-collaborative). It is very much like the [drupal scaffolding](https://github.com/drupal/core-composer-scaffold) functionality in that it pulls files from another repo directly and overwrites them on composer install. Unlike the drupal-scaffold plugin, though, this script does not require you to declare every file you wish to pull from the child package to the site package.

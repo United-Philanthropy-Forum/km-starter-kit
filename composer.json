@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "united-philanthropy-forum/km_collaborative": ">=0.1.4"
+        "united-philanthropy-forum/km_collaborative": ">=0.2.5"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
@@ -51,16 +51,15 @@
         ],
         "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
         "code-sniff": [
-            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,info --ignore=node_modules,bower_components,vendor ./web/modules/custom",
-            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,info --ignore=node_modules,bower_components,vendor ./web/themes/custom",
-            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,info --ignore=node_modules,bower_components,vendor ./web/modules/custom",
-            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,info --ignore=node_modules,bower_components,vendor ./web/themes/custom"
+            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+            "./vendor/bin/phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/custom",
+            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/modules/custom",
+            "./vendor/bin/phpcs --standard=DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md --ignore=node_modules,bower_components,vendor ./web/themes/custom"
         ],
         "unit-test": "echo 'No unit test step defined.'",
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "prepare-for-pantheon": "DrupalProject\\composer\\ScriptHandler::prepareForPantheon",
         "post-install-cmd": [
-            "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
@@ -69,16 +68,12 @@
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
         "post-create-project-cmd": [
-            "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
         "compile-code": [
             "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true",
             "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true"
-        ],
-        "post-drupal-scaffold-cmd": [
-            "chmod 755 .ci/build/multidev-save && chmod 755 .ci/deploy/pantheon/dev-multidev"
         ]
     },
     "extra": {
@@ -107,7 +102,7 @@
                 "type:quicksilver-script"
             ]
         },
-        "installer-types": ["bower-asset", "npm-asset"],
+        "installer-types": ["bower-asset", "npm-asset", "quicksilver-script"],
         "build-env": {
             "install-cms": [
                 "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
@@ -130,27 +125,14 @@
         "km-collab-scaffold": {
             "excludes": {
                 "post-install-cmd": [
-                    "composer.json",
-                    "composer.lock",
-                    ".gitignore",
-                    "README.md",
-                    ".circleci/config.yml",
-                    ".ci/deploy/pantheon/dev-multidev"
+                    ".ci/test/visual-regression/backstopConfig.js",
+                    "README.md"
                 ],
                 "post-update-cmd": [
-                    "composer.json",
-                    "composer.lock",
-                    ".gitignore",
-                    "README.md",
-                    ".circleci/config.yml",
-                    ".ci/deploy/pantheon/dev-multidev"
+                    ".ci/test/visual-regression/backstopConfig.js",
+                    "README.md"
                 ],
-                "post-create-project-cmd": [
-                    "composer.json",
-                    "composer.lock",
-                    ".circleci/config.yml",
-                    ".ci/deploy/pantheon/dev-multidev"
-                ]
+                "post-create-project-cmd": []
             }
         },
         "patchLevel": {
