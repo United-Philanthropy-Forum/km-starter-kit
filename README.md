@@ -72,7 +72,7 @@ This will create a new repository in the United Philanthropy Forum github repo, 
 
 https://github.com/United-Philanthropy-Forum/thinkshout-foundation
 
-dev-thinkshout-foundation.pantheonsite.io
+https://dev-thinkshout-foundation.pantheonsite.io
 
 The Pantheon site should also have the km_collaborative profile installed.
 
