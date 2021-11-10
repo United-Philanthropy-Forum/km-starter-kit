@@ -33,7 +33,10 @@ if (file_exists($local_settings)) {
   include $local_settings;
 }
 
-// Configure Redis.
+// Configure Redis. See https://pantheon.io/docs/object-cache.
+/**
+/* Uncomment this section only after ensuring that Redis is enabled on your
+/* Pantheon installation: both the Pantheon service and the site module.
 if (defined('PANTHEON_ENVIRONMENT')) {
   // Include the Redis services.yml file. Adjust the path if you installed to a
   // contrib or other subdirectory.
@@ -56,6 +59,7 @@ if (defined('PANTHEON_ENVIRONMENT')) {
   // Use the database for forms.
   $settings['cache']['bins']['form'] = 'cache.backend.database';
 }
+*/
 
 /**
  * Redirect to HTTPS and the primary domain.
