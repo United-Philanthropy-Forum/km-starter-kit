@@ -2,6 +2,8 @@
 *
 !README.md
 !composer.json
+!.env.dist
+!RoboFile.php
 !/scripts/
 !/scripts/composer/
 !/scripts/composer/ScriptHandler.php

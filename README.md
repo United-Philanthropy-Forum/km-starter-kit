@@ -117,6 +117,48 @@ This code belongs in this project only. It should only need to be updated if cha
 
 This code was largely taken from [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer), but has been customized to the point where it is too different to be worth parsing.
 
+* "name", "description", and "homepage" where altered.
+
+* The "km_collaborative" repository was added to the "repositories" section.
+
+* The https://asset-packagist.org repo was added as a source for packages. This allows us to pull libraries from bower and npm.
+
+* The "require" section was stripped down to just:
+
+```yaml
+    "united-philanthropy-forum/km_collaborative": ">=0.1.4"
+```
+
+* The "require-dev" section adds the "Optimize Composer for Drupal projects" to speed up local composer builds, and adds drupal console:
+
+```yaml
+"zaporylie/composer-drupal-optimizations": "^1.1"
+```
+
+* The "require-dev" section adds the "Robo-Drupal" project to provide useful local installation scripts:
+
+```yaml
+"thinkshout/robo-drupal": "2.0-rc-1",
+```
+
+* The "minimum-stability" is set to "dev" so that km_collaborative can pull in dev-level modules (anything with RC, alpha, or beta)
+
+* The "scripts/composer/ScriptUpdater.php" autoloader file was added, and the "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
+command was added post install, update, and build.
+
+* The "united-philanthropy-forum/km_collaborative" package is added to the list of items that can pull in scaffold files. This allows km-collaborative the ability to push top-level useful files to all sites using it.
+
+* The "compile-code" script is added, which compiles the kmc base theme into css/js instead of sass.
+
+* The "post-drupal-scaffold-cmd" sets the permission levels for a couple of circle-build files to 755, so it can run on circle as a bash script. These files are also customized, along with the '.circleci/config.yml' file, to belong to the site-specific repository, instead of being pulled from the example drops repo.
+
+* The "km-collab-scaffold" was added to the "extras" section. These are configurations passed to the "scripts/composer/ScriptUpdater.php" script.
+
+* The option to allow upstream modules to apply patches was enabled via the "enable-patching" section. This way, the [KM Collaboration profile](https://github.com/United-Philanthropy-Forum/km-collaborative) can be responsible for things like drupal core patches.
+
+* The patchLevel was set to -p2 for the drupal/core package, which keeps a rouge "b" folder from showing up in your web/core folder in cases
+where the patch doesn't apply cleanly.
+
 #### scripts/composer/ScriptHandler.php
 
 This is a direct copy of the same file in [the D8 pantheon drop](https://github.com/pantheon-systems/example-drops-8-composer) and will be overwritten by upstream changes on in the [km-collaborative profile](https://github.com/United-Philanthropy-Forum/km-collaborative). This file needs to exist in this repo for the terminus build command to succeed, and it can be pulled from the drop to this repo directly at any time.
