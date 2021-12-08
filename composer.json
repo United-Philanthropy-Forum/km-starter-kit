@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "united-philanthropy-forum/km_collaborative": ">=1.0.0"
+        "united-philanthropy-forum/km_collaborative": "dev-762_config_reorg"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
