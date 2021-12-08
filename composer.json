@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "united-philanthropy-forum/km_collaborative": ">=0.2.5"
+        "united-philanthropy-forum/km_collaborative": ">=1.1.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
@@ -30,7 +30,7 @@
         "genesis/behat-fail-aid": ">=2.1",
         "jcalderonzumba/mink-phantomjs-driver": ">=0.3.1",
         "mikey179/vfsstream": ">=1.2",
-        "phpunit/phpunit": ">=6.5",
+        "phpunit/phpunit": ">=7.0",
         "zaporylie/composer-drupal-optimizations": ">=1.1"
     },
     "conflict": {
@@ -105,7 +105,8 @@
         "installer-types": ["bower-asset", "npm-asset", "quicksilver-script"],
         "build-env": {
             "install-cms": [
-                "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
+                "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes",
+                "drush en kmc_config_part2 -y"
             ],
             "export-configuration": "drush config-export --yes"
         },
