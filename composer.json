@@ -154,10 +154,11 @@
     },
     "config": {
         "allow-plugins": {
-            "drupal/*": true,
-            "cweagans/composer-patches": true,
             "composer/*": true,
-            "oomphinc/composer-installers-extender": true
+            "cweagans/composer-patches": true,
+            "drupal/*": true,
+            "oomphinc/composer-installers-extender": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
