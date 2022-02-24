@@ -154,9 +154,9 @@
     },
     "config": {
         "allow-plugins": {
-            "drupal/*": true,
-            "cweagans/composer-patches": true,
             "composer/*": true,
+            "cweagans/composer-patches": true,
+            "drupal/*": true,
             "oomphinc/composer-installers-extender": true,
             "wikimedia/composer-merge-plugin": true,
             "zaporylie/composer-drupal-optimizations": true,
