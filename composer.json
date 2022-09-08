@@ -105,8 +105,7 @@
         "installer-types": ["bower-asset", "npm-asset", "quicksilver-script"],
         "build-env": {
             "install-cms": [
-                "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes",
-                "drush en kmc_config_part2 -y"
+                "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
             ],
             "export-configuration": "drush config-export --yes"
         },
