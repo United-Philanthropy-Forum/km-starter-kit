@@ -71,6 +71,11 @@
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
+        "install-km-collaborative": [
+            "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes",
+            "drush en kmc_config_part2",
+            "drush config_export -y"
+        ],
         "compile-code": [
             "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true",
             "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true"
@@ -105,9 +110,8 @@
         "installer-types": ["bower-asset", "npm-asset", "quicksilver-script"],
         "build-env": {
             "install-cms": [
-                "drush site-install km_collaborative --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
-            ],
-            "export-configuration": "drush config-export --yes"
+                "drush site-install minimal --account-mail={account-mail} --account-name={account-name} --account-pass={account-pass} --site-mail={site-mail} --site-name={site-name} --yes"
+            ]
         },
         "drupal-scaffold": {
             "allowed-packages": [
