@@ -50,7 +50,7 @@ Building this project successfully requires a few things:
 Choose a new project name
 
 To start a new project:
-- decide on a new project name -- it should be a url-safe string, so letters, dashes, and numbers
+- decide on a new project name -- it should be a url-safe string, so letters, dashes, and numbers. It is preferable for the name to match the default domain, so if your domain is "coolfoundation.org" the ideal name is "coolfoundation".
 - confirm which Pantheon "Team" to build the site under (This is a unique name string, but it can include spaces -- visible in Pantheon under "Team")
 - confirm which Github Organization the development repository will live under (this is also a URL-safe string, visible in github)
 
