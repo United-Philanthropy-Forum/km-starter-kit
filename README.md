@@ -78,6 +78,17 @@ https://dev-thinkshout-foundation.pantheonsite.io
 
 The Pantheon site should also have the km_collaborative profile installed.
 
+## Configuring for the global context
+
+We now have a site who's deployment process is tied to your personal Github account. We don't want this! Change this to the use the UPF CI bot account:
+
+- Log in to Github as `upf-ci-bot` (login info in the 1password vault for Forum)
+- Log in to CircleCI using the Github login for the ci bot.
+- Visit `https://app.circleci.com/settings/project/github/United-Philanthropy-Forum/MYSITE/environment-variables`, delete these environment variables if present: `GITHUB_EMAIL` `GITHUB_TOKEN` `TERMINUS_TOKEN` (they will now be provided by the org context)
+- At `https://app.circleci.com/settings/project/github/United-Philanthropy-Forum/MYSITE/ssh`:
+  - Delete the existing "Deploy Key" and then add a new one. 
+  - Scroll down to the Additional SSH Keys area, and delete the existing key for the domain "drush.in". Add the SSH private key for the Forum CI Automation Account (attached as a file to the details in 1password) with the domain "drush.in".
+
 ### What to do if the build:project command fails:
 
 If the `build:project:create` command fails when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, edit your php configuration and raise the memory limit.
