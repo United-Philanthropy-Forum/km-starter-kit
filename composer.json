@@ -20,7 +20,7 @@
     },
     "require": {
         "php": "^8.1",
-        "united-philanthropy-forum/km_collaborative": "dev-release-v180"
+        "united-philanthropy-forum/km_collaborative": "dev-install_fix"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
