@@ -136,10 +136,12 @@
             "excludes": {
                 "post-install-cmd": [
                     ".ci/test/visual-regression/backstopConfig.js",
+                    ".circleci/config.yml",
                     "README.md"
                 ],
                 "post-update-cmd": [
                     ".ci/test/visual-regression/backstopConfig.js",
+                    ".circleci/config.yml",
                     "README.md"
                 ],
                 "post-create-project-cmd": []
