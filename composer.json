@@ -163,13 +163,15 @@
     },
     "config": {
         "allow-plugins": {
-            "composer/*": true,
+            "composer/installers": true,
             "cweagans/composer-patches": true,
-            "drupal/*": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/console-extend-plugin": true,
+            "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
             "wikimedia/composer-merge-plugin": true,
             "zaporylie/composer-drupal-optimizations": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "mnsami/composer-custom-directory-installer": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
