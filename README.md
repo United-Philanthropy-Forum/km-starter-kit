@@ -43,7 +43,7 @@ Building this project successfully requires a few things:
     ```
 8. You have run the [One time setup steps](https://github.com/United-Philanthropy-Forum/km-starter-kit/wiki/How-to-test-changes-to-this-starter-kit#one-time)
 
-9. Your local machine is running php 7.4. You'll know this is working when you can type `php -v` into your console and see something like `PHP 7.4.29 (cli)`
+9. Your local machine is running php 8.1. You'll know this is working when you can type `php -v` into your console and see something like `PHP 8.1.12 (cli)`
 
 ### Usage:
 
@@ -77,6 +77,12 @@ https://github.com/United-Philanthropy-Forum/thinkshout-foundation
 https://dev-thinkshout-foundation.pantheonsite.io
 
 The Pantheon site should also have the km_collaborative profile installed.
+
+## Initial site setup
+
+If the above process completes successfully, you'll have a github repo and a Pantheon repo tied together with CircleCI, all in the appropriate Organizations or accounts. On Pantheon, you'll have a basic site installed on "dev", but it won't look like much, and it won't have most of the KMC features yet. In order to get these, you'll need to work around Pantheon's memory limits. The best way to do this is to create a local copy of the site and clone down the Pantheon database. In your local environment, disable your PHP memory limits (or set them very high). Then, enable the "kmc_config_part2" module. Once you have done so, export your database and import it on Pantheon.
+
+You may also want to enable some other kmc submodules, depending on your site requirements, like kmc_salesforce if you are integrating with a Salesforce instance using the KMC package. These can all be enabled directly on Pantheon once you have "kmc_config_part2" enabled -- that is the only module that needs excessive memory to install.
 
 ### What to do if the build:project command fails:
 
