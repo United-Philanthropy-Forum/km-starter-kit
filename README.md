@@ -78,6 +78,17 @@ https://dev-thinkshout-foundation.pantheonsite.io
 
 The Pantheon site should also have the km_collaborative profile installed.
 
+## Configuring for the global context
+
+We now have a site who's deployment process is tied to your personal Github account. We don't want this! Change this to the use the UPF CI bot account:
+
+- Log in to Github as `upf-ci-bot` (login info in the 1password vault for Forum)
+- Log in to CircleCI using the Github login for the ci bot.
+- Visit `https://app.circleci.com/settings/project/github/United-Philanthropy-Forum/MYSITE/environment-variables`, delete these environment variables if present: `GITHUB_EMAIL` `GITHUB_TOKEN` `TERMINUS_TOKEN` (they will now be provided by the org context)
+- At `https://app.circleci.com/settings/project/github/United-Philanthropy-Forum/MYSITE/ssh`:
+  - Delete the existing "Deploy Key" and then add a new one. 
+  - Scroll down to the Additional SSH Keys area, and delete the existing key for the domain "drush.in". Add the SSH private key for the Forum CI Automation Account (attached as a file to the details in 1password) with the domain "drush.in".
+
 ## Initial site setup
 
 If the above process completes successfully, you'll have a github repo and a Pantheon repo tied together with CircleCI, all in the appropriate Organizations or accounts. On Pantheon, you'll have a basic site installed on "dev", but it won't look like much, and it won't have most of the KMC features yet. In order to get these, you'll need to work around Pantheon's memory limits. The best way to do this is to create a local copy of the site and clone down the Pantheon database. In your local environment, disable your PHP memory limits (or set them very high). Then, enable the "kmc_config_part2" module. Once you have done so, export your database and import it on Pantheon.
