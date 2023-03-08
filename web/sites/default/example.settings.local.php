@@ -163,6 +163,19 @@ $settings['config_exclude_modules'] = ['devel', 'stage_file_proxy', 'twig_xdebug
 $settings['config_sync_directory'] = '../config';
 $settings['install_profile'] = 'km_collaborative';
 
+// Disable Pantheon solr.
+$config['search_api.server.pantheon_contacts_solr']['status'] = FALSE;
+$config['search_api.server.pantheon_groups_solr']['status'] = FALSE;
+$config['search_api.server.pantheon_orgs_solr']['status'] = FALSE;
+$config['search_api.server.pantheon_solr']['status'] = FALSE;
+
+// Enable localhost solr.
+$config['search_api.server.localhost']['status'] = TRUE;
+$config['search_api.index.contacts']['server'] = 'localhost';
+$config['search_api.index.default_content_index']['server'] = 'localhost';
+$config['search_api.index.groups_index']['server'] = 'localhost';
+$config['search_api.index.organizations']['server'] = 'localhost';
+
 // Paste the values from your first install here:
 // $settings['hash_salt'] = '';
 // $databases['default']['default'] = [
