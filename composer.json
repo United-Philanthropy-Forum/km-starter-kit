@@ -20,6 +20,7 @@
     },
     "require": {
         "php": "^8.1",
+        "drush/drush": ">10.6",
         "united-philanthropy-forum/km_collaborative": "^2.0"
     },
     "require-dev": {
@@ -28,7 +29,6 @@
         "drupal/coder": ">=8.3.1",
         "drupal/console": ">=1",
         "drupal/drupal-extension": ">=4.1",
-        "drush/drush": "^10.6",
         "drupal/upgrade_status": "^3.10",
         "genesis/behat-fail-aid": ">=2.1",
         "jcalderonzumba/mink-phantomjs-driver": ">=0.3.1",
