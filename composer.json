@@ -1,6 +1,6 @@
 {
     "name": "united-philanthropy-forum/km-starter-kit",
-    "description": "Knowledge Management Collaborative template for Drupal 8",
+    "description": "Knowledge Management Collaborative template for Drupal 10",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/united-philanthropy-forum/km-starter-kit",
@@ -21,7 +21,7 @@
     "require": {
         "php": "^8.1",
         "drush/drush": ">10.6",
-        "united-philanthropy-forum/km_collaborative": "^2.0"
+        "united-philanthropy-forum/km_collaborative": "^3.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
@@ -29,7 +29,7 @@
         "drupal/coder": ">=8.3.1",
         "drupal/console": ">=1",
         "drupal/drupal-extension": ">=4.1",
-        "drupal/upgrade_status": "^3.10",
+        "drupal/upgrade_status": ">=4.10",
         "genesis/behat-fail-aid": ">=2.1",
         "jcalderonzumba/mink-phantomjs-driver": ">=0.3.1",
         "mglaman/drupal-check": "^1.1",
