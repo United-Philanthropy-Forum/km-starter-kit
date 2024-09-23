@@ -78,10 +78,6 @@ https://dev-thinkshout-foundation.pantheonsite.io
 
 The Pantheon site should also have the km_collaborative profile installed.
 
-## Managing failures:
-
-If the script fails, you will end up with a broken setup. The only way to fix this is to delete the Pantheon site and Github repo and start again. The most common error is on Drupal installation, getting an out of memory error. To work around this, re-run the script, but add another argument: `--profile='minimal'`. This will skip the bigger KMC installation process. Once this succeeds, you'll need to run the proper profile installation on a local instance of the site and upload your database to the Pantheon Dev site.
-
 ## Configuring for the global context
 
 We now have a site who's deployment process is tied to your personal Github account. We don't want this! Change this to the use the UPF CI bot account:
@@ -101,7 +97,7 @@ You may also want to enable some other kmc submodules, depending on your site re
 
 ### What to do if the build:project command fails:
 
-If the `build:project:create` command fails when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, edit your php configuration and raise the memory limit.
+If the `build:project:create` command fails on Pantheon when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, then the base install of the distro has become too large (this happens regularly). When it fails this way, you will end up with a broken setup. The only way to fix this is to delete the Pantheon site and Github repo and start again. The most common error is on Drupal installation, getting an out of memory error. To work around this, create a new release of this project, specificying the "minimal" installation profiler rather than km_collaborative in composer.json script for "install-cms". This will skip the bigger KMC installation process. Once this succeeds, you'll need to run the proper profile installation on a local instance of the site and upload your database to the Pantheon Dev site.
 
 If the command fails because of a composer conflict, you can try to debug this by running the simpler build command locally:
 
