@@ -32,7 +32,7 @@ Building this project successfully requires a few things:
 
 5. [Composer > 2.0.0](https://getcomposer.org/) Globally available. You'll know this is working when you can type `composer --version` into your console and see something like "Composer version 2.1.6 2021-08-19 17:11:08"
 
-6. [Terminus > 2.0](https://pantheon.io/docs/terminus/install). You'll know this is working when you can type `terminus --version` into your console and see something like `Terminus 2.3.0`
+6. [Terminus > 3.6](https://pantheon.io/docs/terminus/install). You'll know this is working when you can type `terminus --version` into your console and see something like `Terminus 3.6.0`. It's a good idea to update Terminus to the _latest_ version before running this script, otherwise it may fail inexplicably.
 
 7. [The Pantheon Build tools](https://github.com/pantheon-systems/terminus-build-tools-plugin/#installation). You'll know this is working when you can type `terminus build:project:create -h` into your console and see information about the build:project:create command, like this:
 
@@ -97,7 +97,7 @@ You may also want to enable some other kmc submodules, depending on your site re
 
 ### What to do if the build:project command fails:
 
-If the `build:project:create` command fails when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, edit your php configuration and raise the memory limit.
+If the `build:project:create` command fails on Pantheon when running `composer create-project` with `Fatal error: Allowed memory size ... exhausted`, then the base install of the distro has become too large (this happens regularly). When it fails this way, you will end up with a broken setup. The only way to fix this is to delete the Pantheon site and Github repo and start again. The most common error is on Drupal installation, getting an out of memory error. To work around this, create a new release of this project, specificying the "minimal" installation profiler rather than km_collaborative in composer.json script for "install-cms". This will skip the bigger KMC installation process. Once this succeeds, you'll need to run the proper profile installation on a local instance of the site and upload your database to the Pantheon Dev site.
 
 If the command fails because of a composer conflict, you can try to debug this by running the simpler build command locally:
 
