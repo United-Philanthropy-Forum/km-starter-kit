@@ -21,7 +21,7 @@
     "require": {
         "php": "^8.1",
         "drush/drush": ">10.6",
-        "united-philanthropy-forum/km_collaborative": "^3.0"
+        "united-philanthropy-forum/km_collaborative": "dev-main"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": ">=0.5.0",
