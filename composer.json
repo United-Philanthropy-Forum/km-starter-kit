@@ -19,8 +19,6 @@
         }
     },
     "require": {
-        "php": "^8.1",
-        "drush/drush": ">10.6",
         "united-philanthropy-forum/km_collaborative": "dev-main"
     },
     "require-dev": {
