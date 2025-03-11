@@ -43,7 +43,7 @@ Building this project successfully requires a few things:
     ```
 8. You have run the [One time setup steps](https://github.com/United-Philanthropy-Forum/km-starter-kit/wiki/How-to-test-changes-to-this-starter-kit#one-time)
 
-9. Your local machine is running php 8.1. You'll know this is working when you can type `php -v` into your console and see something like `PHP 8.1.12 (cli)`
+9. Your local machine is running php 8.3. You'll know this is working when you can type `php -v` into your console and see something like `PHP 8.3.16 (cli)`
 
 ### Usage:
 
