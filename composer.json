@@ -118,7 +118,10 @@
                 "web-root": "./web"
             },
             "file-mapping": {
-                "[project-root]/.editorconfig": false
+                "[project-root]/.editorconfig": false,
+                "[web-root]/robots.txt": {
+                  "append": "kmc-robots-additions.txt"
+                }
             }
         },
         "enable-patching": true,
@@ -127,11 +130,13 @@
                 "post-install-cmd": [
                     ".ci/test/visual-regression/backstopConfig.js",
                     ".circleci/config.yml",
+                    "kmc-robots-additions.txt",
                     "README.md"
                 ],
                 "post-update-cmd": [
                     ".ci/test/visual-regression/backstopConfig.js",
                     ".circleci/config.yml",
+                    "kmc-robots-additions.txt",
                     "README.md"
                 ],
                 "post-create-project-cmd": []
