@@ -139,9 +139,7 @@
                     "kmc-robots-additions.txt",
                     "README.md"
                 ],
-                "post-create-project-cmd": [
-                    "kmc-robots-additions.txt"
-                ]
+                "post-create-project-cmd": []
             }
         },
         "patchLevel": {
