@@ -109,22 +109,6 @@
             ],
             "export-configuration": "drush config-export --yes"
         },
-        "drupal-scaffold": {
-            "allowed-packages": [
-                "pantheon-systems/drupal-integrations",
-                "united-philanthropy-forum/km_collaborative"
-            ],
-            "locations": {
-                "web-root": "./web"
-            },
-            "file-mapping": {
-                "[project-root]/.editorconfig": false,
-                "[web-root]/robots.txt": {
-                  "append": "kmc-robots-additions.txt"
-                }
-            }
-        },
-        "enable-patching": true,
         "km-collab-scaffold": {
             "excludes": {
                 "post-install-cmd": [
@@ -142,6 +126,22 @@
                 "post-create-project-cmd": []
             }
         },
+        "drupal-scaffold": {
+            "allowed-packages": [
+                "pantheon-systems/drupal-integrations",
+                "united-philanthropy-forum/km_collaborative"
+            ],
+            "locations": {
+                "web-root": "./web"
+            },
+            "file-mapping": {
+                "[project-root]/.editorconfig": false,
+                "[web-root]/robots.txt": {
+                  "append": "kmc-robots-additions.txt"
+                }
+            }
+        },
+        "enable-patching": true,
         "patchLevel": {
             "drupal/core": "-p2"
         },
