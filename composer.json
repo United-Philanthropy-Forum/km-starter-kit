@@ -120,7 +120,7 @@
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
                 "[web-root]/robots.txt": {
-                  "append": "kmc-robots-additions.txt"
+                  "append": "web/profiles/contrib/km_collaborative/assets/kmc-robots-additions.txt"
                 }
             }
         },
@@ -139,7 +139,9 @@
                     "kmc-robots-additions.txt",
                     "README.md"
                 ],
-                "post-create-project-cmd": []
+                "post-create-project-cmd": [
+                    "kmc-robots-additions.txt",
+                ]
             }
         },
         "patchLevel": {
