@@ -66,7 +66,7 @@ if ((defined('PANTHEON_ENVIRONMENT') || getenv('PANTHEON_TOKEN')) && PANTHEON_EN
 }
 
 // =====================ATTENTION, PUT AT THE END!!==========================
-// Put this at the end of settings.php, event after the settings.local logic.
+// Put this at the end of settings.php, even after the settings.local logic.
 // ==========================================================================
 /**
  * If $allow_salesforce has not been set to TRUE, disable Salesforce sync.
