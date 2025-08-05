@@ -176,6 +176,9 @@ $config['search_api.index.default_content_index']['server'] = 'localhost';
 $config['search_api.index.groups_index']['server'] = 'localhost';
 $config['search_api.index.organizations']['server'] = 'localhost';
 
+// Enable Salesforce sync
+$allow_salesforce = TRUE;
+
 // Paste the values from your first install here:
 // $settings['hash_salt'] = '';
 // $databases['default']['default'] = [
