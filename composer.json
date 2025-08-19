@@ -16,6 +16,10 @@
         "km_collaborative": {
             "type": "git",
             "url": "https://github.com/United-Philanthropy-Forum/km-collaborative"
+        },
+        "kmc_paragraph_access": {
+            "type": "git",
+            "url": "https://github.com/United-Philanthropy-Forum/kmc_paragraph_access"
         }
     },
     "require": {
