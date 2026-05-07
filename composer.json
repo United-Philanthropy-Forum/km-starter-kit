@@ -170,7 +170,8 @@
             "oomphinc/composer-installers-extender": true,
             "wikimedia/composer-merge-plugin": true,
             "zaporylie/composer-drupal-optimizations": true,
-            "mnsami/composer-custom-directory-installer": true
+            "mnsami/composer-custom-directory-installer": true,
+            "php-http/discovery": true
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
