@@ -16,6 +16,10 @@
         "km_collaborative": {
             "type": "git",
             "url": "https://github.com/United-Philanthropy-Forum/km-collaborative"
+        },
+        "kmc_dev_helper": {
+            "type": "git",
+            "url": "https://github.com/United-Philanthropy-Forum/kmc_dev_helper"
         }
     },
     "require": {
@@ -72,8 +76,8 @@
             "DrupalProject\\composer\\ScriptUpdater::createParentFiles"
         ],
         "compile-code": [
-            "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true",
-            "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_base_theme || true"
+            "npm install --prefix web/profiles/contrib/km_collaborative/themes/kmc_wellspring || true",
+            "npm run build --prefix web/profiles/contrib/km_collaborative/themes/kmc_wellspring || true"
         ]
     },
     "extra": {
